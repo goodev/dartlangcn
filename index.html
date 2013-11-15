@@ -1,0 +1,428 @@
+---
+layout: homepage
+googleapi: true
+js:
+- url: /js/display-news.js
+- url: /js/os-switcher.js
+  defer: true
+- url: /js/editor-downloads-analytics.js
+  defer: true
+- url: /js/front-page-analytics.js
+  defer: true
+- url: /js/editor-version.js
+  defer: true
+---
+
+  <div class="container-page">
+    <div class="container-full hero-hldr">
+      <div class="hero container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h5>1.0 JUST RELEASED</h5>
+            <h1>Dart is a new language for scalable web app engineering.</h1>
+            {% include downloads/_dart-editor.html buttonclass="btn btn-default btn-lg download-btn" %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-full sub-hero-hldr">
+      <div id="feed-posts" class="sub-hero container">
+      </div>
+    </div>
+
+    <div class="container dart-container">
+      
+      <section class="dart-ctas">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+              <div class="col-md-4">
+                <h2>See Dart</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>About 5 minutes</p>
+                <p>Dart is class based and object oriented, without being dogmatic.</p>
+                <a id="see-code" href="#code"><i class="sprite-icon-triangle"></i>See code</a>
+              </div>
+              <div class="col-md-4">
+                <h2>Try Dart</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>About 1 hour</p>
+                <p>Write a Dart web app, even if you've never written
+		a web app before. </p>
+                <a href="/codelabs/darrrt/"><i class="sprite-icon-triangle"></i>Write code</a>
+              </div>
+              <div class="col-md-4">
+                <h2>Dive deep</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>About 1 day</p>
+                <p>Dart has lots of <a href="#tools">tools</a>,
+                <a href="#libraries">libraries</a>, and documentation,
+                plus a developer community.</p>
+                <a href="/docs/"><i class="sprite-icon-triangle"></i>Learn more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 browser-support">
+            <p>All modern browsers (both desktop and mobile) can run Dart web apps, thanks to our
+            <a href="#dart2js">Dart-to-JavaScript compiler</a>.</p>
+            <i class="sprite-icon-browsers"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="dart-new-language sec-shadow" id="code">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>Dart is new, yet familiar</h2>
+
+            <div id="dart-language-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#dart-language-carousel" data-slide-to="0" class="active">Easy to learn</li>
+                <li data-target="#dart-language-carousel" data-slide-to="1">Concise</li>
+                <li data-target="#dart-language-carousel" data-slide-to="2">Optionally typed</li>
+                <li data-target="#dart-language-carousel" data-slide-to="3">Modular</li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <p>You can probably already read and even write Dart code. <a href="/samples/">See more samples.</a> </p>
+                  <div class="code-hldr">
+<pre class="prettyprint lang-dart">
+main() {                              // This is where the app starts executing.
+  print(<a href="#" class="dart-popover" data-toggle="popover" title="Converting objects to strings" data-html="true" data-trigger="hover focus" data-content="The print() function takes any object and converts it to a string, using the object's toString() method.">new Fibonacci(10)</a>);          // Print a new object's value.
+}
+
+class Fibonacci {                     // Define a class.
+  int original, fibo;                 // Declare variables.
+  String toString() => '<a href="#" class="dart-popover" data-toggle="popover" title="String interpolation" data-html="true" data-trigger="hover focus" data-content="Use $identifier to insert the value of an identifier (in this case, the integer value of fibo) into a string.">$fibo</a>';      // Define a method using shorthand syntax.
+
+  Fibonacci(int value) :              // Define a constructor with list initializer.
+    original = value, fibo = fib(value) {
+  }
+
+  static int fib(int n) {             // Define a class method.
+    if (n < 2) {                      // Control flow and expressions.
+      return n;
+    } else {
+      return fib(n-1) + fib(n-2);     // Arithmetic operators.
+    }
+  }
+}
+// Want terser code? Write a one-line function instead:
+// fib(n) => n < 2 ? n : (fib(n - 1) + fib(n - 2));
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Write less. Say more.</p>
+                  <div class="code-hldr">
+<pre class="prettyprint lang-dart">
+import 'dart:math' show PI;
+
+List shapes = <a href="#" class="dart-popover" data-toggle="popover" title="Empty list literal" data-html="true" data-trigger="hover focus" data-content="Empty square brackets form an empty list literal, which creates a new, empty List object. This is equivalent to new List().">[]</a>;                     // Use literals to create lists.
+addShape(shape) <a href="#" class="dart-popover" data-toggle="popover" title="Fat-arrow syntax" data-html="true" data-trigger="hover focus" data-content="The function on the left-hand side of the fat arrow (in this case, addShape) returns the value on the right-hand side of the fat arrow.">=></a> shapes.add(shape); // Function shorthand syntax.
+
+main() {
+  // The cascade operator (..) saves you from repetitive typing.
+  addShape(new Ellipse(10, 20)<a href="#" class="dart-popover" data-toggle="popover" title="Cascade operator" data-html="true" data-trigger="hover focus" data-content="The cascade operator lets you chain multiple method calls and member references to the same object.">..</a>rotation = 45*PI/180
+                              <a href="#" class="dart-popover" data-toggle="popover" title="Cascade operator" data-html="true" data-trigger="hover focus" data-content="The cascade operator lets you chain multiple method calls and member references to the same object.">..</a>color = 'rgb(0,129,198)'
+                              <a href="#" class="dart-popover" data-toggle="popover" title="Cascade operator" data-html="true" data-trigger="hover focus" data-content="The cascade operator lets you chain multiple method calls and member references to the same object.">..</a>outlineWidth = 0);
+
+  // You can easily insert expression values into strings.
+  print('Area of the first shape: <a href="#" class="dart-popover" data-toggle="popover" title="Insert expressions into strings" data-html="true" data-trigger="hover focus" data-content="Use ${expression} to insert the value of an expression into a string. The expression is evaluated and converted to a string.">${shapes[0].area}</a>');
+}
+
+class Ellipse {
+  num minorAxis, majorAxis;
+  // Syntactic sugar to set members before the constructor body runs.
+  Ellipse(this.minorAxis, this.majorAxis);
+}
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Add types to your code to help people and tools.
+                  Or don’t. You can always go dynamic.</p>
+                  <div class="code-hldr">
+                    <div class="code-hldr">  
+                      <div class="item" style="margin-top:23px">
+                          Without types, code freely.<br>
+                        <img src="imgs/no_types.png">
+                                </div>
+                                <div class="item" style="margin-top:23px;">
+                          With types, learn about errors early.<br>
+                        <img src="imgs/with_types.png">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Structure that scales. Organize your code with functions,
+                  classes, mixins, and libraries.</p>
+                  <div class="code-hldr">  
+  <img src="imgs/modular.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      <section class="dart-libraries">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" id="libraries">
+            <h2>Dart’s comprehensive libraries give you lots of choices</h2>
+
+            <div id="dart-libraries-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#dart-libraries-carousel" data-slide-to="0" class="active">Collections</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="1">Async</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="2">HTML</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="3">Testing</li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <p>Every app can use lists, sets, and maps, all provided by Dart's core library.</p>
+                  <div class="code-hldr">        
+<pre class="prettyprint lang-dart">
+Map famousDuos = { 'Han Solo': 'Chewbacca',      // Map literal.
+                   'Bonnie': 'Clyde',
+                   'Laurel': 'Hardy' };
+List myFriends = [ 'Seth', 'Kathy', 'Shailen' ]; // List literal.
+
+// Create lists and maps from <a href="#" class="dart-popover" data-toggle="popover" title="Iterables" data-html="true" data-trigger="hover focus" data-content="An Iterable object uses an Iterator to serve objects one at a time. Maps, lists, and sets are all examples of Iterable objects.">Iterable</a> objects.
+List shuffledSidekicks = new List.from(famousDuos.values)..shuffle();
+Map mixedDuos = new Map.fromIterables(famousDuos.keys, shuffledSidekicks);
+
+// Iteration.
+mixedDuos.<a href="#" class="dart-popover" data-toggle="popover" title="Iteration with forEach()" data-html="true" data-trigger="hover focus" data-content="The forEach() method calls the provided function for each key-value pair in the Map object, passing in both the key and the value. In this example, the function just prints the key and value.">forEach((k, v) { print('$k, $v'); });</a>
+
+// Some lists, maps, and sets are growable.
+Set setOfMyFriends = new Set.from(myFriends);
+Set famousPeople = new Set.from(famousDuos.values);
+famousPeople.addAll(famousDuos.keys);
+
+// Rich set of functionality for collections.
+print(famousPeople.intersection(setOfMyFriends).isEmpty);
+print(famousPeople.union(setOfMyFriends).length);
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Dart's Future and Stream classes provide a consistent interface to values that aren’t yet available.</p>
+                  <div class="code-hldr">   
+<pre class="prettyprint lang-dart">
+// Get a stream of key-press events from an element:
+querySelector('textarea').<a href="#" class="dart-popover" data-toggle="popover" title="onKeyPress" data-html="true" data-trigger="hover focus" data-content="The onKeyPress field of an element is an instance of ElementStream, which provides notifications about key press events on the element.">onKeyPress</a>
+
+  // Filter the stream, getting a stream of events only for certain key codes:
+  <a href="#" class="dart-popover" data-toggle="popover" title="where()" data-html="true" data-trigger="hover focus" data-content="where() is a method in Stream that filters out some events.">.where</a>((e) => e.keyCode >= 32 && e.keyCode <= 122)
+
+  // Convert those key codes, getting a stream of corresponding characters:
+  <a href="#" class="dart-popover" data-toggle="popover" title="map()" data-html="true" data-trigger="hover focus" data-content="map() is a method in Stream that converts each item in the stream to a new value using the function provided.">.map</a>((e) => new String.fromCharCode(e.charCode))
+
+  // Ask for the first character, getting a Future.
+  <a href="#" class="dart-popover" data-toggle="popover" title="first" data-html="true" data-trigger="hover focus" data-content="first is a property in Stream that returns the first element of the stream by way of a Future.">.first</a>
+
+  // When the Future completes, print the first character to the console.
+  <a href="#" class="dart-popover" data-toggle="popover" title="then()" data-html="true" data-trigger="hover focus" data-content="then() is a method in Future that registers a callback function on the Future.">.then</a>((char) => print('First char=$char'));
+
+
+
+
+
+
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Dart’s HTML library unlocks the power of the modern browser, smoothing over browser differences.</p>
+                  <div class="code-hldr">
+
+<pre class="prettyprint lang-dart">
+import 'dart:html';
+import 'dart:convert' show JSON;
+
+void main() {
+  querySelector('#getColors')<a href="#" class="dart-popover" data-toggle="popover" title="Listen to a stream" data-html="true" data-trigger="hover focus" data-content="Register an event handler for mouse click events.">.onClick.listen(showColors)</a>; // Event handling.
+}
+void showColors(Event e) {
+  <a href="#" class="dart-popover" data-toggle="popover" title="Make HTTP Requests" data-html="true" data-trigger="hover focus" data-content="Use HttpRequest.getString() to read data from a URI as a string. In this case, the file contains JSON-encoded data.">HttpRequest.getString('colors.json')</a>             // One-line HTTP request.
+      .then((String jsonString) {                   // Uses Futures and Streams.
+        UListElement colors = querySelector('#colors');  // DOM element types.
+        List<String> colorList = <a href="#" class="dart-popover" data-toggle="popover" title="JSON converter" data-html="true" data-trigger="hover focus" data-content="JSON, an object in dart:convert, encodes and decodes JSON data.">JSON.decode(jsonString);</a>
+        for (int i = 0; i < colorList.length; i++) {
+          colors.children.add(                      // Dynamic DOM manipulation.
+            new LIElement()..text = colorList[i]    // Dynamic element creation.
+             ..style.color = colorList[i]           // Uniform CSS styles.
+             ..style.fontFamily = 'Marker Felt');
+        }
+      })
+      .catchError((_) { /* Handle error. */ });
+}
+</pre>
+
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Use Dart's unit testing and mocking libraries
+                  to make sure your app keeps working well.</p>
+                  <div class="code-hldr">
+{% prettify dart %}
+import 'package:unittest/unittest.dart';
+import 'dart:math' show Point;
+
+main() {
+  Point a = new Point(2, 15);
+  Point b = new Point(7, 3);
+
+  test('point distances', () {
+    expect(a.distanceTo(b), equals(13));
+  });
+  test('point magnitude close to', () {
+    expect(a.magnitude, closeTo(15, .25));
+  });
+  test('point magnitude greater than', () {
+    expect(a.magnitude, greaterThan(b.magnitude));
+  });
+  test('point == operator', () {
+    expect(a == b, equals(false));
+  });
+}
+{% endprettify %}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="js-dart-apps sec-shadow">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" id="dart2js">
+            <h2>Compilation to JavaScript lets you deploy Dart apps now</h2>
+
+            <div id="js-dart-apps-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#js-dart-apps-carousel" data-slide-to="0" class="active">Support for all modern browsers</li>
+                <li data-target="#js-dart-apps-carousel" data-slide-to="1">Tree shaking</li>
+                <li data-target="#js-dart-apps-carousel" data-slide-to="2">Minifying</li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <p>Dart web apps run in all modern browsers.
+		  </p>
+                  <img src="/imgs/temp-code-example.png" alt="Modern browsers, desktop and mobile">
+
+                </div>
+                <div class="item">
+                  <p>Use lots of libraries? That’s OK. Tree shaking gets rid of the stuff you don’t need.</p>
+                   <img src="/imgs/slider-tree-example.png" alt="temp image">
+                </div>
+                <div class="item">
+                  <p>Shrink your code before you deploy to generate faster-loading JavaScript.</p>
+                  <img src="/imgs/slider-minify-example.png" alt="temp image">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="amazing-apps">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>Dart is used to build amazing apps</h2>
+
+            <div id="amazing-apps-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators icon-indicators">
+                <li data-target="#amazing-apps-carousel" data-slide-to="0" class="active"><i class="sprite-icon-app-1"></i></li>
+                <li data-target="#amazing-apps-carousel" data-slide-to="1"><i class="sprite-icon-app-2"></i></li>
+                <li data-target="#amazing-apps-carousel" data-slide-to="2"><i class="sprite-icon-app-3"></i></li>
+                <li data-target="#amazing-apps-carousel" data-slide-to="3"><i class="sprite-icon-app-4"></i></li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+
+                  <h4>&ldquo;Dart offers a sane and consistent development experience for modern web applications. It really is exactly what we were looking for.&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Blossom</p>
+
+                </div>
+                <div class="item">
+           <h4>&ldquo;We took a team of developers unfamiliar with Dart and were able to ship a sales force automation application in under six months. I think that's pretty amazing productivity.&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Google CRM</p>
+                  
+                </div>
+                <div class="item">
+           <h4>&ldquo;Being able to work well at scale is extremely important, and Dart is instrumental to this effort.&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Mandrill</p>
+                </div>
+                <div class="item">
+           <h4>&ldquo;When we were first started exploring Dart, the team was very excited about its potential. After using it with Montage, we're even more convinced about its future.&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Montage</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="productivity-tools sec-shadow">
+        <div class="row">
+          <div class="col-md-12" id="tools">
+            <h2>Dart’s tools help you be productive</h2>
+            <img src="/imgs/dart-editor.png" alt="Image of Dart Editor">
+            <p>Dart Editor is the easiest way to get started, helping you edit, debug, and run Dart apps. When you download Dart Editor, you get other tools, as well:</p>
+          </div>
+        </div>
+        <div class="row productivity-tools-options">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="row">
+              <div class="col-md-4">
+                <h4>Pub package manager</h4>
+                <p>The easiest way to get and share Dart code, pub keeps your packages up to date, handling versioning and dependency.</p>
+              </div>
+              <div class="col-md-4">
+                <h4>Dev Server</h4>
+                <p>Automatically generate assets using pub’s dev server.</p>
+              </div>
+              <div class="col-md-4">
+                <h4>Dartium</h4>
+                <p>Experience zero-compile edit/refresh cycles. This build of Chromium includes the Dart VM.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+          {% include downloads/_dart-editor.html buttonclass="btn btn-primary btn-lg" %}
+          </div>
+          <aside class="alert alert-info os-choices col-md-8 col-md-offset-2">
+            <b>Note:</b>
+            You can write Dart apps using any recent version of
+            {% include os-choices.html %}
+            The Dart development tools <b>do not&nbsp;support Windows XP</b>.
+            Dart Editor requires Java version 6 or higher.
+          </aside>
+        </div>
+      </section>
+    </div> <!-- end container -->
+  </div> <!-- end container-page -->      

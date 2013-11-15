@@ -1,0 +1,22 @@
+<div class="downloads">
+  {% for sdk in site.custom.downloads.binaries %}
+
+  <div class="{{ sdk.os }} downloads">
+  {% if sdk.os == 'macos' %}
+    <a class="download-link btn btn-primary btn-large" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/sdk/dartsdk-{{ sdk.os }}-x64-release.{{ sdk.ext }}">
+      <i class="sprite-icon-download-btn"> </i>
+      Dart SDK ({{ sdk.name }})
+    </a>
+  {% else %}
+    <a class="download-link btn btn-primary btn-large" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/sdk/dartsdk-{{ sdk.os }}-x64-release.{{ sdk.ext }}">
+    	<i class="sprite-icon-download-btn"> </i>
+    	Dart SDK (64-bit {{ sdk.name }})
+   	</a>
+    <a class="download-link btn btn-primary btn-large" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/sdk/dartsdk-{{ sdk.os }}-ia32-release.{{ sdk.ext }}">
+      <i class="sprite-icon-download-btn"> </i>
+      Dart SDK (32-bit {{ sdk.name }})
+    </a>
+  {% endif %}
+  </div>
+  {% endfor %}
+</div>
